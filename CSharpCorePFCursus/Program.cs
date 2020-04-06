@@ -12,7 +12,7 @@ namespace CSharpCorePFCursus
 
         private static void test()
         {
-            Console.WriteLine("Hallo");
+            Console.WriteLine("Hallo Git");
         }
     }
 }
