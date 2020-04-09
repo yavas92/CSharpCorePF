@@ -1,19 +1,14 @@
 ﻿using System;
 
-namespace CSharpCorePFCursus
+namespace CSharpCorePFOefenmap
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
-            test();
-        }
-
-        private static void test()
-        {
-            Console.WriteLine("Hallo Git");
-            /* :))) */
+            String a = "Hallo";
+            String b = "Hallo";
+            Console.WriteLine(a == b);
         }
     }
 }
