@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Text;
 
-namespace CSharpCorePFCursus
+namespace CSharpCorePFOefenMap
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            // 1 Variabelen, constanten en bewerkingen
+            //-------------------------------------------
+
             // 1.1 Conversie Celsius  Fahrenheit
             /* 
             Bereken de gemiddelde lichaamstemperatuur in graden Fahrenheit als je weet dat deze in Celsius 37° is. Om 
@@ -77,7 +82,256 @@ namespace CSharpCorePFCursus
 
 
 
+            // 2 Selecties
+            //-------------
+
+            // 2.1 Kortingsbon
+            /*
+            Een kledingzaak geeft een kortingsbon afhankelijk van je aankoopgedrag van het afgelopen jaar. Heb je voor minder 
+            dan 25 euro aangekocht, dan krijg je een bon ter waarde van 1% van je aankopen. Bij een aankoop van 25 euro of meer
+            maar minder dan 50 euro is dit 2%, van 50 tot 100 euro 3% en vanaf 100 euro is het 5%. Voer een aankoopbedrag in, 
+            bereken en toon de waarde van de bijhorende korting.
+            */
+
+            //Console.Write("Tik een aankoopbedrag in: ");
+            //double aankoopbedrag = int.Parse(Console.ReadLine());
+            //double kortingsbon = 0;
+
+            //if (aankoopbedrag < 25)
+            //{
+            //    kortingsbon = aankoopbedrag * 0.01;
+            //} else if (aankoopbedrag >= 25 && aankoopbedrag < 50)
+            //{
+            //    kortingsbon = aankoopbedrag * 0.02;
+            //} else if (aankoopbedrag >= 50 && aankoopbedrag < 100)
+            //{
+            //    kortingsbon = aankoopbedrag * 0.03;
+            //} else if (aankoopbedrag >= 100)
+            //{
+            //    kortingsbon = aankoopbedrag * 0.05;
+            //}
+
+            //Console.WriteLine($"U krijgt een kortingsbon cadeau ter waarde van {kortingsbon} euro!");
+
+
+
+            // 2.2 Schrikkeljaar
+            /*
+            Bereken of een ingevoerd jaartal een schrikkeljaar is of niet. Alle jaren die deelbaar zijn door 4 zijn 
+            schrikkeljaren behalve de jaren die deelbaar zijn door 100 en niet deelbaar zijn door 400.
+            */
+
+            //Console.Write("Geef een jaartal in: ");
+            //int jaar = int.Parse(Console.ReadLine());
+            //System.Text.StringBuilder schrikkeljaar = new System.Text.StringBuilder("geen");
+
+            //if (jaar % 4 == 0)
+            //{
+            //    if (jaar % 100 == 0 && jaar % 400 != 0)
+            //    {
+            //        // doet niks want schrikkeljaar staat al op "geen schrikkeljaar"
+            //    }
+            //    else
+            //    {
+            //        schrikkeljaar.Clear();
+            //        schrikkeljaar.Append("een");
+            //    }
+            //}
+
+            //Console.WriteLine($"{jaar} is {schrikkeljaar} schrikkeljaar.");
+
+
+
+            // 2.3 Lichtkrant
+            /*
+            Een winkel toont de openingsuren en een gepaste boodschap via een lichtkrant aan de 
+            klanten.
+
+            Schrijf een programma dat aan de gebruiker een willekeurige datum vraagt en de juiste 
+            openingsuren en de juiste boodschap vermeldt, afhankelijk van de dag van de week:
+
+             * *Zie takenbundel voor tabel
+            */
+
+            //Console.WriteLine("Geef een willekeurig datum in ");
+            //DateTime datum = DateTime.Parse(Console.ReadLine());
+
+            //switch ((int) datum.DayOfWeek)
+            //{
+            //    case 0:
+            //        Console.WriteLine("Zondag: Gesloten");
+            //        Console.WriteLine("We wensen u een fijn weekend!");
+            //        break;
+            //    case 1:
+            //    case 2:
+            //    case 3:
+            //    case 4:
+            //    case 5:
+            //        Console.WriteLine("maandag t.e.m. vrijdag: 9u00 tot 12-00 en van 13u00 tot 18u00");
+            //        Console.WriteLine("We wensen u een prettige werkdag!");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("zaterdag: 10u00 tot 12-00");
+            //        Console.WriteLine("We wensen u een fijn weekend!");
+            //        break;
+            //     }
+
+
+
+            // 3 Iteraties
+            //-------------
+
+            // 3.1 Kleinste, grootste en gemiddelde
+            /*
+            Voer een aantal positieve getallen in en bereken er de kleinste, grootste en gemiddelde 
+            waarde van. Beëindig de invoer van de getallen met -1.
+            */
+
+            //int getal, kleinste = 0, grootste = 0, gemiddelde = 0, aantal = 0;
+            //Console.WriteLine("Voer positieve getallen in (eindig met -1)");
+            //while ((getal = int.Parse(Console.ReadLine())) != -1)
+            //{
+            //    if (kleinste != 0 && grootste != 0)
+            //    {
+            //        kleinste = getal < kleinste ? getal : kleinste;
+            //        grootste = getal > grootste ? getal : grootste;
+            //        gemiddelde += getal;
+            //        aantal++;
+            //    }
+            //    else if (getal != 0)
+            //    {
+            //        kleinste = getal;
+            //        grootste = getal;
+            //    }
+            //}
+
+            //Console.WriteLine($"Kleinste: {kleinste}\nGrootste: {grootste}\nGemiddelde: {gemiddelde / aantal}");
+
+
+
+            // 3.2 Priemgetal
+            /*
+            Bereken of een ingevoerd getal een priemgetal is of niet. Doe dit door het getal te delen 
+            door alle getallen die liggen tussen 1 en het getal zelf.
+            Toon de delers op het scherm. Besluit dan of het ingegeven getal een priemgetal is of niet.
+            */
+
+            //Console.WriteLine("Tik een getal in: ");
+            //int getal = int.Parse(Console.ReadLine());
+            //bool isPriem = true;
+
+            //for (int i = 2; i < getal; i++)
+            //{
+            //    if (getal % i == 0) { Console.WriteLine($"{getal} is deelbaar door {i}."); isPriem = false; }
+            //}
+
+            //Console.Write($"{getal} is ");
+            //if (isPriem) { Console.Write("een "); } else { Console.Write("geen "); }
+            //Console.WriteLine("priemgetal.");
+
+
+
+            // 3.3 IBAN rekeningnummer generator
+            /*
+            Het IBAN (International Bank Account Number) bankrekeningnummer heeft een vaste lengte per
+            land en bestaat in België uit 16 tekens.
+
+            O.w.v. de leesbaarheid wordt het voorgesteld in 4 groepen van 4 tekens:
+            BE73 0631 5475 6360
+
+            een landcode (2 letters, BE) + een controlegetal (2 cijfers) + het nationaal rekeningnummer
+            (12cijfers).
+
+            Om het nationaal rekeningnummerformaat (063-1547563-60) om te zetten in een IBAN 
+            rekeningnummerformaat kan je de volgende werkwijze toepassen:
+
+            * Schrap alle niet-alfanumerieke tekens: 063-1547563-60 -> 063154756360
+            * Voeg achteraan de landcode, gevolgd door “00” toe: 0631547563606360 -> 063154756360BE00
+            * Vervang de letters door cijfers, meer bepaald door hun positie in het alfabet, vermeerderd met 9 (A=10, B=11, … Z=35): 063154756360BE00 -> 063154756360111400
+            * Deel dit getal door 97 en trek de rest van deze deling af van 98. Wanneer dit resultaat slechts één cijfer is, laat dit dan voorafgaan door een 0 (nul): 73
+            * Dit cijfer is het controlegetal dat volgt op de landcode in het IBAN rekeningnummer: BE73 0631 5475 6360
+            * Schrijf een programma dat het IBAN bankrekeningnummer genereert op basis van een opgegeven Belgisch bankrekeningnummer.
+            */
+
+            //const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //Console.Write("Geef rekeningnummer in: ");
+            //string rekeningNr = Console.ReadLine();
+            //const string landcode = "BE00";
+
+            //StringBuilder bewerkteRekeningNr = new StringBuilder(rekeningNr.Replace("-", ""));
+            ////Schrap alle niet-alfanumerieke tekens: 063-1547563-60 -> 063154756360
+            //StringBuilder bewerkteLandcode = new StringBuilder();
+            //StringBuilder ibanVoorvoegsel = new StringBuilder();
+            //StringBuilder ibanRekeningnummer = new StringBuilder();
+
+            //ulong controlegetal;
+
+
+            //for (int i = 0; i < landcode.Length; i++)
+            //{
+            //    if (alfabet.IndexOf(landcode[i]) != -1)
+            //    {
+            //        bewerkteLandcode.Append(alfabet.IndexOf(landcode[i]) + 10);
+            //        // Vervang de letters door cijfers
+            //    }
+            //    else
+            //    {
+            //        bewerkteLandcode.Append(landcode[i]);
+            //    }
+            //}
+
+            //bewerkteRekeningNr.Append(bewerkteLandcode);
+            //// Voeg achteraan de BEWERKTE landcode
+
+            //controlegetal = 98 - (ulong.Parse(bewerkteRekeningNr.ToString()) % 97);
+
+            //ibanVoorvoegsel.Append("BE" + (controlegetal > 9 ? controlegetal.ToString() : "0" + controlegetal.ToString()));
+            //// IBAN voorvoegsel met landcode berekenen + aanmaken
+
+            //ibanRekeningnummer.Append(ibanVoorvoegsel + rekeningNr.Replace("-", ""));
+            //ibanRekeningnummer.Insert(12, "-");
+            //ibanRekeningnummer.Insert(8, "-");
+            //ibanRekeningnummer.Insert(4, "-");
+
+            //Console.WriteLine($"Rekeningnummer: {rekeningNr}\nIBAN: {ibanRekeningnummer}");
+
+
+
+            // 3.4 Controle IBAN rekeningnummer
+            /*
+            Schrijf een programma om te controleren of een IBAN rekeningnummer een geldig nummer is. 
+            Hiervoor kan je als volgt tewerk gaan:
             
+            * Schrap alle spaties uit het IBAN nummer -> BE73063154756360
+            * Verplaats de eerste 4 tekens naar uiterst rechts -> 063154756360BE73
+            * Vervang de letters door cijfers, meer bepaald door hun positie in het alfabet, vermeerderd met 9 (A=10, B=11, … Z=35) -> 063154756360111473
+            * Deel dit getal door 97. Voor een geldig IBAN rekeningnummer moet de rest van deze deling gelijk zijn aan 1 
+            */
+
+            //const string alfabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            //StringBuilder ibanRekeningnummer = new StringBuilder("BE56 0019 0020 0088");
+            //StringBuilder ibanVoorvoegsel = new StringBuilder();
+            //StringBuilder cijfers = new StringBuilder();
+            
+
+            //ibanRekeningnummer.Replace(" ", "");
+            //ibanVoorvoegsel.Append(ibanRekeningnummer.ToString().Substring(0, 4));
+            //ibanRekeningnummer.Remove(0, 4);
+
+            //for (int i = 0; i < ibanVoorvoegsel.Length; i++)
+            //{
+            //    if (alfabet.IndexOf(ibanVoorvoegsel[i]) != -1)
+            //    {
+            //        cijfers.Append(alfabet.IndexOf(ibanVoorvoegsel[i]) + 10);
+            //    } else
+            //    {
+            //        cijfers.Append(ibanVoorvoegsel[i]);
+            //    }
+            //}
+            //ibanRekeningnummer.Append(cijfers);
+
+            //string isGeldig = ulong.Parse(ibanRekeningnummer.ToString()) % 97 == 1? "een" : "geen";
+            //Console.WriteLine($"Dit is {isGeldig} geldige IBAN nummer."); 
 
         }
     }
