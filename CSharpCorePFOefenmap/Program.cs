@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpCorePFOefenmap;
+using System;
 using System.Text;
 
 namespace CSharpCorePFOefenMap
@@ -312,7 +313,7 @@ namespace CSharpCorePFOefenMap
             //StringBuilder ibanRekeningnummer = new StringBuilder("BE56 0019 0020 0088");
             //StringBuilder ibanVoorvoegsel = new StringBuilder();
             //StringBuilder cijfers = new StringBuilder();
-            
+
 
             //ibanRekeningnummer.Replace(" ", "");
             //ibanVoorvoegsel.Append(ibanRekeningnummer.ToString().Substring(0, 4));
@@ -332,6 +333,61 @@ namespace CSharpCorePFOefenMap
 
             //string isGeldig = ulong.Parse(ibanRekeningnummer.ToString()) % 97 == 1? "een" : "geen";
             //Console.WriteLine($"Dit is {isGeldig} geldige IBAN nummer."); 
+
+
+
+            // 4 Arrays
+            //-------------------
+
+            // 4.1 Codeerprogramma
+            // Zie opgave in pdf
+
+            //char[] alfabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            //char[] sleutel = { 'Q', 'S', 'P', 'A', 'T', 'V', 'X', 'B', 'C', 'R', 'J', 'Y', 'E', 'D', 'U', 'O', 'H', 'Z', 'G', 'I', 'F', 'L', 'N', 'W', 'K', 'M' };
+
+            //Console.WriteLine("Geef een tekst in:");
+            //String tekst = Console.ReadLine().ToUpper();
+            //StringBuilder gecodeerdeTekst = new StringBuilder();
+
+            //for (int i = 0; i < tekst.Length; i++)
+            //{
+            //    for (int j = 0; j < alfabet.Length; j++)
+            //    {
+            //        if (tekst[i] == alfabet[j])
+            //        {
+            //            gecodeerdeTekst.Append(sleutel[j]);
+            //            break;
+            //        }
+            //        else if (j == alfabet.Length - 1)
+            //        {
+            //            gecodeerdeTekst.Append(tekst[i]);
+            //        }
+            //    }
+            //}
+            //Console.WriteLine(gecodeerdeTekst);
+
+
+
+            // 5 Classes, objects, objectvariables, constructors
+            //-------------------------------------------------------
+
+            // 5.1 Oefening Bank
+            // Zie opgave in pdf
+
+            //Rekening rekening = new Rekening(rekeningNummer: "BE23377019153291", creatieDatum: new DateTime(2020, 4, 14));
+            //rekening.Afbeelden();
+            //rekening.Storten(stortBedrag: 2000);
+            //rekening.Afbeelden();
+
+
+
+            // 5.2 Oefening Voertuig
+            // Zie opgave in pdf
+
+            //Voertuig v1 = new Voertuig("Burcu Köse", 25000m, 136, 6.6f, "CANIM SIVAS");
+            //Voertuig v2 = new Voertuig("Abdullah Yavas", 12500m, 100, 5.5f, "1-EMD-003");
+            //v1.Afbeelden();
+            //v2.Afbeelden();
 
         }
     }

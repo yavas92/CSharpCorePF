@@ -39,10 +39,19 @@ namespace CSharpCorePFCursus
             }
         }
 
+        private static DateTime personeelsFeestValue;
+
+        public static DateTime PersoneelsFeest
+        {
+            get { return personeelsFeestValue; }
+            set { personeelsFeestValue = value; }
+        }
+
+
         // Constructors
         //public Werknemer():this("Onbekend", DateTime.Today, Geslacht.Man)
         //{
-            
+
         //}
         public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
         {
@@ -51,6 +60,14 @@ namespace CSharpCorePFCursus
             Geslacht = geslacht;
         }
 
+        static Werknemer()
+        {
+            PersoneelsFeest = new DateTime(DateTime.Today.Year, 2, 1);
+            while (PersoneelsFeest.DayOfWeek != DayOfWeek.Friday)
+            {
+                PersoneelsFeest = PersoneelsFeest.AddDays(1);
+            }
+        }
 
         // Methods
         public bool VerjaarAncien
@@ -64,9 +81,14 @@ namespace CSharpCorePFCursus
 
         public void Afbeelden()
         {
-            Console.WriteLine($"Naam: {Naam}");
-            Console.WriteLine($"Geslacht: {Geslacht}");
-            Console.WriteLine($"In dienst: {InDienst}");
+            LijnenTrekker lijnenTrekker = new LijnenTrekker();
+            lijnenTrekker.TrekLijn(40, '=');
+            Console.WriteLine();
+            Console.WriteLine($"Naam: \t\t\t{Naam}");
+            Console.WriteLine($"Geslacht: \t\t{Geslacht}");
+            Console.WriteLine($"In dienst: \t\t{InDienst.ToShortDateString()}");
+            Console.WriteLine($"Personeelsfeest: \t{PersoneelsFeest.ToShortDateString()}");
+            Console.WriteLine();
         }
 
     }
