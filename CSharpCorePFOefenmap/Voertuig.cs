@@ -6,15 +6,8 @@ namespace CSharpCorePFOefenmap
 {
     class Voertuig
     {
-        // Properties
-        public string Polishouder { get; set; }
-        public decimal Kostprijs { get; set; }
-        public int Pk { get; set; }
-        public float GemiddeldVerbruik { get; set; }
-        public string Nummerplaat { get; set; }
-
         // Constructors
-        public Voertuig() : this("Onbepaald", 0.0m, 0, 0.0f, "Onbepaald")
+        public Voertuig() : this("Onbepaald", 0m, 0, 0f, "Onbepaald")
         {
 
         }
@@ -28,14 +21,54 @@ namespace CSharpCorePFOefenmap
             this.Nummerplaat = nummerplaat;
         }
 
+        // Properties
+        public string Polishouder { get; set; }
+        private decimal kostprijsValue;
+
+        public decimal Kostprijs
+        {
+            get { return kostprijsValue; }
+            set
+            {
+                if (value > 0m)
+                    kostprijsValue = value;
+            }
+        }
+
+        private int pkValue;
+
+        public int Pk
+        {
+            get { return pkValue; }
+            set
+            {
+                if (value > 0)
+                    pkValue = value;
+            }
+        }
+
+        private float gemiddeldVerbruikValue;
+
+        public float GemiddeldVerbruik
+        {
+            get { return gemiddeldVerbruikValue; }
+            set
+            {
+                if (value >= 0f)
+                    gemiddeldVerbruikValue = value;
+            }
+        }
+
+        public string Nummerplaat { get; set; }
+
         // Methods
-        public void Afbeelden()
+        public virtual void Afbeelden()
         {
             Console.WriteLine($"Polishouder: {Polishouder}");
             Console.WriteLine($"Kostprijs: {Kostprijs} euro");
             Console.WriteLine($"Vermogen: {Pk} Pk");
             Console.WriteLine($"Gemmideld verbruik: {GemiddeldVerbruik} L/100km");
-            Console.WriteLine($"Nummerplaat: {Nummerplaat}\n");
+            Console.WriteLine($"Nummerplaat: {Nummerplaat}");
         }
     }
 }

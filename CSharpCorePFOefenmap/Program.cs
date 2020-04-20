@@ -2,7 +2,7 @@
 using System;
 using System.Text;
 
-namespace CSharpCorePFOefenMap
+namespace CSharpCorePFOefenmap
 {
     class Program
     {
@@ -389,6 +389,31 @@ namespace CSharpCorePFOefenMap
             //v1.Afbeelden();
             //v2.Afbeelden();
 
+
+
+            // 6 Inheritance
+            //-----------------
+
+            // 6.1 Oefening Bank (zie opgave cursus)
+
+            //Spaarrekening r1 = new Spaarrekening("BE23377019153291", DateTime.Today, 1);
+            //Zichtrekening r2 = new Zichtrekening("BE23377019153291", DateTime.Today, -2000m);
+
+            //r1.Storten(1000);
+            //r2.Storten(125m);
+
+            //r1.Afbeelden();
+            //r2.Afbeelden();
+
+
+
+            // 6.2 Oefening Voertuigen (zie opgave cursus)
+
+            //Vrachtwagen v1 = new Vrachtwagen("Abdullah Yavas", 60000, 450, 20, "1-VRA-003");
+            //Personenwagen v2 = new Personenwagen();
+
+            //v1.Afbeelden();
+            //v2.Afbeelden();
         }
     }
 }
