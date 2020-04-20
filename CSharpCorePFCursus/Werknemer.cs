@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFCursus
 {
-    public class Werknemer
+    public abstract class Werknemer
     {
         // Properties
         private string naamValue;
@@ -47,6 +47,10 @@ namespace CSharpCorePFCursus
             set { personeelsFeestValue = value; }
         }
 
+        public abstract decimal Premie
+        {
+            get;
+        }
 
         // Constructors
         public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)

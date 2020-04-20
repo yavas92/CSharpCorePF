@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFCursus
 {
-    public class Manager : Bediende
+    public sealed class Manager : Bediende
     {
         // Properties
         private decimal bonusValue;
@@ -16,6 +16,14 @@ namespace CSharpCorePFCursus
             {
                 if (value >= 0m)
                     bonusValue = value;
+            }
+        }
+
+        public override decimal Premie
+        {
+            get
+            {
+                return Bonus * 3m;
             }
         }
 

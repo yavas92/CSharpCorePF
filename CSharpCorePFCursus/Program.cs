@@ -14,36 +14,14 @@ namespace CSharpCorePFCursus
     {
         static void Main(string[] args)
         {
-            Werknemer ik = new Bediende("Asterix", DateTime.Today, Geslacht.Man, 1500m);
-            Werknemer jij = new Bediende("Obelix", DateTime.Today, Geslacht.Man, 2300m);
-
-            Console.WriteLine(ik.GetHashCode());
-            Console.WriteLine(jij.GetHashCode());
-
-
-            Bediende hij;
-
-            hij = (Bediende)ik;
-            hij.Afbeelden();
-            Console.WriteLine(hij.GetHashCode());
-
-            hij = ik as Bediende;
-            if (hij != null)
-            {
-                hij.Afbeelden();
-                Console.WriteLine(hij.GetHashCode()==ik.GetHashCode());
-            }
-                
-
-            hij = jij as Bediende;
-            if (hij != null)
-            {
-                hij.Afbeelden();
-                Console.WriteLine(hij.GetHashCode());
-            }
-
-            
-                
+            Arbeider asterix = new Arbeider("Asterix", new DateTime(2019, 1, 1), Geslacht.Man, 24.79m, 3);
+            Bediende obelix = new Bediende("Obelix", new DateTime(1995, 1, 1),
+            Geslacht.Man, 2400.79m);
+            Manager idefix = new Manager("Idefix", new DateTime(1996, 1, 1),
+            Geslacht.Man, 2400.79m, 7000m);
+            Console.WriteLine(asterix.Premie);
+            Console.WriteLine(obelix.Premie);
+            Console.WriteLine(idefix.Premie);
         }
     }
 }

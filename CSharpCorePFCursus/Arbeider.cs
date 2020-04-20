@@ -30,6 +30,15 @@ namespace CSharpCorePFCursus
             }
         }
 
+        public override decimal Premie
+        {
+            get
+            {
+                return Uurloon * 150m;
+            }
+            
+        }
+
         // Constructors
         public Arbeider(string naam, DateTime inDienst, Geslacht geslacht, decimal uurloon, byte ploegenstelsel) : base(naam, inDienst, geslacht)
         {
