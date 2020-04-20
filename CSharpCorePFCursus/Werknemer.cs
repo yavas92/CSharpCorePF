@@ -49,10 +49,10 @@ namespace CSharpCorePFCursus
 
 
         // Constructors
-        //public Werknemer():this("Onbekend", DateTime.Today, Geslacht.Man)
-        //{
+        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
+        {
 
-        //}
+        }
         public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
         {
             Naam = naam;
@@ -79,17 +79,17 @@ namespace CSharpCorePFCursus
         }
 
 
-        public void Afbeelden()
+        public virtual void Afbeelden()
         {
-            LijnenTrekker lijnenTrekker = new LijnenTrekker();
-            lijnenTrekker.TrekLijn(40, '=');
-            Console.WriteLine();
-            Console.WriteLine($"Naam: \t\t\t{Naam}");
-            Console.WriteLine($"Geslacht: \t\t{Geslacht}");
-            Console.WriteLine($"In dienst: \t\t{InDienst.ToShortDateString()}");
-            Console.WriteLine($"Personeelsfeest: \t{PersoneelsFeest.ToShortDateString()}");
-            Console.WriteLine();
+            Console.WriteLine($"Naam: {Naam}");
+            Console.WriteLine($"Geslacht: {Geslacht}");
+            Console.WriteLine($"In dienst: {InDienst.ToShortDateString()}");
+            Console.WriteLine($"Personeelsfeest: {PersoneelsFeest.ToShortDateString()}");
         }
 
+        public override string ToString()
+        {
+            return $"{Naam} {Geslacht}";
+        }
     }
 }

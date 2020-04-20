@@ -2,18 +2,48 @@
 
 namespace CSharpCorePFCursus
 {
+    public static class Rekenaar
+    {
+        public static int Kwadraat(int getal)
+        {
+            return getal * getal;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Werknemer ik = new Werknemer("Asterix", new DateTime(2019,1,1), Geslacht.Man);
-            ik.Afbeelden();
+            Werknemer ik = new Bediende("Asterix", DateTime.Today, Geslacht.Man, 1500m);
+            Werknemer jij = new Bediende("Obelix", DateTime.Today, Geslacht.Man, 2300m);
+
+            Console.WriteLine(ik.GetHashCode());
+            Console.WriteLine(jij.GetHashCode());
 
 
-            Werknemer jij = new Werknemer("Obelix", new DateTime(2019,1,2), Geslacht.Man);
+            Bediende hij;
+
+            hij = (Bediende)ik;
+            hij.Afbeelden();
+            Console.WriteLine(hij.GetHashCode());
+
+            hij = ik as Bediende;
+            if (hij != null)
+            {
+                hij.Afbeelden();
+                Console.WriteLine(hij.GetHashCode()==ik.GetHashCode());
+            }
+                
+
+            hij = jij as Bediende;
+            if (hij != null)
+            {
+                hij.Afbeelden();
+                Console.WriteLine(hij.GetHashCode());
+            }
 
             
-            jij.Afbeelden();
+                
         }
     }
 }
