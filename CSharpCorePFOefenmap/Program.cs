@@ -414,6 +414,15 @@ namespace CSharpCorePFOefenmap
 
             //v1.Afbeelden();
             //v2.Afbeelden();
+
+
+
+            // 7 Abstract classes, abstract members, static members
+            //---------------------------------------------------------
+
+            // 7.1 Oefening Bank
+
+
         }
     }
 }

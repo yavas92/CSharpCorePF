@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFOefenmap
 {
-    class Voertuig
+    public abstract class Voertuig
     {
         // Constructors
         public Voertuig() : this("Onbepaald", 0m, 0, 0f, "Onbepaald")
@@ -70,5 +70,8 @@ namespace CSharpCorePFOefenmap
             Console.WriteLine($"Gemmideld verbruik: {GemiddeldVerbruik} L/100km");
             Console.WriteLine($"Nummerplaat: {Nummerplaat}");
         }
+
+        public abstract double GetKyotoScore();
+        
     }
 }

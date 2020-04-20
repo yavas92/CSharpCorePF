@@ -51,5 +51,10 @@ namespace CSharpCorePFOefenmap
             Console.WriteLine($"Aantal deuren: {AantalDeuren}");
             Console.WriteLine($"Aantal passagiers: {AantalPassagiers}");
         }
+
+        public override double GetKyotoScore()
+        {
+            return AantalPassagiers != 0 ? GemiddeldVerbruik * Pk / AantalPassagiers : 0.0;
+        }
     }
 }

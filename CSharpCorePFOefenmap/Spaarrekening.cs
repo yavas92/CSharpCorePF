@@ -7,9 +7,9 @@ namespace CSharpCorePFOefenmap
     class Spaarrekening : Rekening
     {
         // Properties
-        private float intrestValue;
+        private static float intrestValue;
 
-        public float Intrest
+        public static float Intrest
         {
             get { return intrestValue; }
             set
@@ -20,9 +20,9 @@ namespace CSharpCorePFOefenmap
         }
 
         // Constructor
-        public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum, float intrest) : base(rekeningNummer, saldo, creatieDatum)
+        public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum) : base(rekeningNummer, saldo, creatieDatum) // Parameter intrest is verwijderd wegens aanpassen naar constante
         {
-            Intrest = intrest;
+            
         }
 
         // Methods

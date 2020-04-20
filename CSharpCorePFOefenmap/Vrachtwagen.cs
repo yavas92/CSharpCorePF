@@ -36,5 +36,10 @@ namespace CSharpCorePFOefenmap
             base.Afbeelden();
             Console.WriteLine($"Maximum lading: {MaxLading}");
         }
+
+        public override double GetKyotoScore()
+        {
+            return MaxLading != 0 ? GemiddeldVerbruik * Pk / MaxLading * 1000 : 0.0;
+        }
     }
 }
