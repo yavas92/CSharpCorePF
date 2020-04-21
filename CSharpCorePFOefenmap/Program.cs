@@ -421,6 +421,49 @@ namespace CSharpCorePFOefenmap
             //---------------------------------------------------------
 
             // 7.1 Oefening Bank
+            // Classes aangepast
+
+            // 7.2 Oefening Voertuigen
+            // Classes aangepast
+
+
+            // 8 Inheritance polymorphisme
+            //-------------------------------
+
+            // 8.1 Oefening Bank
+            /*
+            Creëer een array van twee rekeningen. Initialiseer de eerste rekening als een spaarrekening gebruik 
+            makend van een geparametriseerde constructor. De tweede rekening is een zichtrekening, eveneens te 
+            initialiseren met een geparametriseerde constructor. Overloop de array met een foreach opdracht en roep de
+            method Afbeelden() op om het polymorphisme te demonstreren.
+            */
+
+            //Rekening[] mijnRekeningen = new Rekening[2];
+            //mijnRekeningen[0] = new Spaarrekening("BE23377019153291", 10000m, DateTime.Now);
+            //mijnRekeningen[1] = new Zichtrekening("BE23377019153291", 1500m, DateTime.Now, -2000m);
+
+            //foreach (Rekening eenRekening in mijnRekeningen)
+            //{
+            //    eenRekening.Afbeelden();
+            //    Console.WriteLine();
+            //}
+
+
+            // 8.2 Oefening Voertuigen
+            /*
+            Vul een array op met één personenwagen en één vrachtwagen. Toon de gegevens en de kyoto-score van beide 
+            voertuigen op het scherm.
+            */
+
+            //Voertuig[] mijnVoertuigen = new Voertuig[2];
+            //mijnVoertuigen[0] = new Personenwagen("Abdullah Yavas", 25000m, 200, 8.6f, "1-AAA-000", 4, 5);
+            //mijnVoertuigen[1] = new Vrachtwagen("Abdullah Yavas", 45000m, 400, 20f, "1-BBB-111", 15000f);
+
+            //foreach (Voertuig eenVoertuig in mijnVoertuigen)
+            //{
+            //    eenVoertuig.Afbeelden();
+            //    Console.WriteLine();
+            //}
 
 
         }

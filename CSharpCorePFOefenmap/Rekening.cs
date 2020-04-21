@@ -10,13 +10,25 @@ namespace CSharpCorePFOefenmap
         public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum)
         {
             this.Rekeningnummer = rekeningNummer;
+            this.Saldo = saldo;
             this.CreatieDatum = creatieDatum;
         }
 
         // Properties
         private string rekeningNummerValue;
         private DateTime creatieDatum;
-        public double Saldo { get; set; }
+        private decimal saldoValue;
+
+        public decimal Saldo
+        {
+            get { return saldoValue; }
+            set
+            {
+                if (value >= 0m)
+                    saldoValue = value;
+            }
+        }
+
         public string Rekeningnummer
         {
             get { return rekeningNummerValue; }
@@ -56,11 +68,11 @@ namespace CSharpCorePFOefenmap
         public virtual void Afbeelden()
         {
             Console.WriteLine($"Rekeningnummer: {this.Rekeningnummer}");
-            Console.WriteLine($"Creatiedatum: {this.CreatieDatum}");
+            Console.WriteLine($"Creatiedatum: {this.CreatieDatum.ToShortDateString()}");
             Console.WriteLine($"Saldo: {this.Saldo}");
         }
 
-        public void Storten(double stortBedrag)
+        public void Storten(decimal stortBedrag)
         {
             this.Saldo += stortBedrag;
         }
