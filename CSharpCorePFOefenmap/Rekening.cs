@@ -7,11 +7,12 @@ namespace CSharpCorePFOefenmap
     public abstract class Rekening
     {
         // Constructor
-        public Rekening(string rekeningNummer, decimal saldo, DateTime creatieDatum)
+        public Rekening(Klant eigenaar, string rekeningNummer, decimal saldo, DateTime creatieDatum)
         {
-            this.Rekeningnummer = rekeningNummer;
-            this.Saldo = saldo;
-            this.CreatieDatum = creatieDatum;
+            Eigenaar = eigenaar;
+            Rekeningnummer = rekeningNummer;
+            Saldo = saldo;
+            CreatieDatum = creatieDatum;
         }
 
         // Properties
@@ -51,6 +52,15 @@ namespace CSharpCorePFOefenmap
             }
         }
 
+        private Klant eigenaarValue;
+
+        public Klant Eigenaar
+        {
+            get { return eigenaarValue; }
+            set { eigenaarValue = value; }
+        }
+
+
         // Methods
         private bool RekeningnummerCorrect(string rekeningnummer)
         {
@@ -67,6 +77,12 @@ namespace CSharpCorePFOefenmap
 
         public virtual void Afbeelden()
         {
+            if (Eigenaar != null)
+            {
+                Console.Write("Eigenaar: ");
+                Eigenaar.Afbeelden();
+            }
+                
             Console.WriteLine($"Rekeningnummer: {this.Rekeningnummer}");
             Console.WriteLine($"Creatiedatum: {this.CreatieDatum.ToShortDateString()}");
             Console.WriteLine($"Saldo: {this.Saldo}");

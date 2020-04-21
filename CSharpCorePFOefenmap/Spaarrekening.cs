@@ -20,7 +20,7 @@ namespace CSharpCorePFOefenmap
         }
 
         // Constructor
-        public Spaarrekening(string rekeningNummer, decimal saldo, DateTime creatieDatum) : base(rekeningNummer, saldo, creatieDatum) // Parameter intrest is verwijderd wegens aanpassen naar constante
+        public Spaarrekening(Klant eigenaar, string rekeningNummer, decimal saldo, DateTime creatieDatum) : base(eigenaar, rekeningNummer, saldo, creatieDatum)
         {
             
         }

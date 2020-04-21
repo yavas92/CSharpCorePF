@@ -438,6 +438,7 @@ namespace CSharpCorePFOefenmap
             method Afbeelden() op om het polymorphisme te demonstreren.
             */
 
+            //Spaarrekening.Intrest = 2f;
             //Rekening[] mijnRekeningen = new Rekening[2];
             //mijnRekeningen[0] = new Spaarrekening("BE23377019153291", 10000m, DateTime.Now);
             //mijnRekeningen[1] = new Zichtrekening("BE23377019153291", 1500m, DateTime.Now, -2000m);
@@ -462,10 +463,24 @@ namespace CSharpCorePFOefenmap
             //foreach (Voertuig eenVoertuig in mijnVoertuigen)
             //{
             //    eenVoertuig.Afbeelden();
+            //    Console.WriteLine($"Kyoto score: {Math.Round(eenVoertuig.GetKyotoScore()*100)/100}");
             //    Console.WriteLine();
             //}
 
 
+
+            // 9 Aggregation
+            //----------------
+
+            // 9.1 Oefening Bank
+
+            //Klant ik = new Klant("Abdullah", "Yavas");
+            //Spaarrekening sRekening = new Spaarrekening(ik, "BE23377019153291", 20000, DateTime.Today);
+            //Zichtrekening zRekening = new Zichtrekening(ik, "BE23377019153291", 2500, DateTime.Today, -1000);
+
+            //sRekening.Afbeelden();
+            //Console.WriteLine();
+            //zRekening.Afbeelden();
         }
     }
 }
