@@ -52,6 +52,15 @@ namespace CSharpCorePFCursus
             get;
         }
 
+        private Afdeling afdelingValue;
+
+        public Afdeling Afdeling
+        {
+            get { return afdelingValue; }
+            set { afdelingValue = value; }
+        }
+
+
         // Constructors
         public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
         {
@@ -89,6 +98,8 @@ namespace CSharpCorePFCursus
             Console.WriteLine($"Geslacht: {Geslacht}");
             Console.WriteLine($"In dienst: {InDienst.ToShortDateString()}");
             Console.WriteLine($"Personeelsfeest: {PersoneelsFeest.ToShortDateString()}");
+            if (Afdeling != null)
+                Console.WriteLine(Afdeling);
         }
 
         public override string ToString()
