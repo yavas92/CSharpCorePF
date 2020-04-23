@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFOefenmap
 {
-    public abstract class Voertuig
+    public abstract class Voertuig : IVervuiler, IMilieu, IPrivaat
     {
         // Constructors
         public Voertuig() : this("Onbepaald", 0m, 0, 0f, "Onbepaald")
@@ -72,6 +72,17 @@ namespace CSharpCorePFOefenmap
         }
 
         public abstract double GetKyotoScore();
-        
+
+        public abstract double GeefVervuiling();
+
+        public string GeefMilieuData()
+        {
+            return $"Pk: {Pk} \t Kostprijs: {Kostprijs} \t Verbruik: {GemiddeldVerbruik}";
+        }
+
+        public string GeefPrivateData()
+        {
+            return $"Polishouder: {Polishouder} \t Nummerplaat: {Nummerplaat}";
+        }
     }
 }

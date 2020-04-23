@@ -41,5 +41,9 @@ namespace CSharpCorePFOefenmap
         {
             return MaxLading != 0 ? GemiddeldVerbruik * Pk / MaxLading * 1000 : 0.0;
         }
+        public override double GeefVervuiling()
+        {
+            return GetKyotoScore() * 20;
+        }
     }
 }

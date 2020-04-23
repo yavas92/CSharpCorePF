@@ -481,6 +481,61 @@ namespace CSharpCorePFOefenmap
             //sRekening.Afbeelden();
             //Console.WriteLine();
             //zRekening.Afbeelden();
+
+
+
+            // 10 Interfaces
+            //-----------------
+
+            // 10.1 Oefening Bank
+
+            //Klant ik = new Klant("Abdullah", "Yavas");
+            //ISpaarmiddel[] spaarmiddelen = new ISpaarmiddel[3];
+
+            //spaarmiddelen[0] = new Zichtrekening(ik, "BE23377019153291", 2000m, DateTime.Now, -1000);
+            //spaarmiddelen[1] = new Spaarrekening(ik, "BE23377019153291", 5000m, DateTime.Now);
+            //spaarmiddelen[2] = new Kasbon(DateTime.Now, 399.99m, 2, 2, ik);
+
+            //foreach (ISpaarmiddel spaarmiddel in spaarmiddelen)
+            //{
+            //    spaarmiddel.Afbeelden();
+            //    Console.WriteLine();
+            //}
+
+
+            // 10.2 Oefening Voertuigen
+
+            //IVervuiler[] vervuilers = new IVervuiler[3];
+
+            //vervuilers[0] = new Personenwagen("Abdullah Yavas", 25000m, 200, 8.6f, "1-AAA-000", 4, 5);
+            //vervuilers[1] = new Vrachtwagen("Abdullah Yavas", 45000m, 400, 20f, "1-BBB-111", 15000f);
+            //vervuilers[2] = new Stookketel(300f);
+
+            //foreach (IVervuiler vervuiler in vervuilers)
+            //{
+            //    Console.WriteLine(vervuiler.GeefVervuiling());
+            //    Console.WriteLine();
+            //}
+
+            //IPrivaat[] privateGegevens = new IPrivaat[2];
+            //privateGegevens[0] = vervuilers[0] as IPrivaat;
+            //privateGegevens[1] = vervuilers[1] as IPrivaat;
+
+            //foreach(IPrivaat pGegeven in privateGegevens)
+            //{
+            //    Console.WriteLine(pGegeven.GeefPrivateData());
+            //    Console.WriteLine();
+            //}
+
+            //IMilieu[] milieuGegevens = new IMilieu[2];
+            //milieuGegevens[0] = vervuilers[0] as IMilieu;
+            //milieuGegevens[1] = vervuilers[1] as IMilieu;
+
+            //foreach(IMilieu mGegeven in milieuGegevens)
+            //{
+            //    Console.WriteLine(mGegeven.GeefMilieuData());
+            //    Console.WriteLine();
+            //}
         }
     }
 }

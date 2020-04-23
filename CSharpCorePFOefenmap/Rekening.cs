@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFOefenmap
 {
-    public abstract class Rekening
+    public abstract class Rekening : ISpaarmiddel
     {
         // Constructor
         public Rekening(Klant eigenaar, string rekeningNummer, decimal saldo, DateTime creatieDatum)

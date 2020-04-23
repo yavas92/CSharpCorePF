@@ -44,5 +44,10 @@ namespace CSharpCorePFOefenmap
         {
             Console.WriteLine($"{Voornaam} {Naam}");
         }
+
+        public override string ToString()
+        {
+            return $"{Voornaam} {Naam}";
+        }
     }
 }
