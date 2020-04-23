@@ -27,6 +27,14 @@ namespace CSharpCorePFCursus
             }
         }
 
+        public override decimal Bedrag
+        {
+            get
+            {
+                return Wedde * 12;
+            }
+        }
+
         // Constructors
         public Bediende(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde)
             : base(naam, inDienst, geslacht)

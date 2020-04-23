@@ -27,6 +27,14 @@ namespace CSharpCorePFCursus
             }
         }
 
+        public override decimal Bedrag
+        {
+            get
+            {
+                return base.Bedrag + Bonus;
+            }
+        }
+
         // Constructor
         public Manager(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde, decimal bonus)
             : base(naam, inDienst, geslacht, wedde)

@@ -36,7 +36,14 @@ namespace CSharpCorePFCursus
             {
                 return Uurloon * 150m;
             }
-            
+        }
+
+        public override decimal Bedrag
+        {
+            get
+            {
+                return Uurloon * 2000;
+            }
         }
 
         // Constructors

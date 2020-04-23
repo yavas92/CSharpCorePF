@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFCursus
 {
-    public abstract partial class Werknemer
+    public abstract partial class Werknemer : IKost
     {
         // Properties
         private string naamValue;
@@ -93,6 +93,18 @@ namespace CSharpCorePFCursus
             }
         }
 
+        public abstract decimal Bedrag
+        {
+            get;
+        }
+
+        public bool Menselijk
+        {
+            get
+            {
+                return true;
+            }
+        }
 
         public virtual void Afbeelden()
         {
