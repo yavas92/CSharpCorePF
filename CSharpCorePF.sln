@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpCorePFCursus", "CSharpCorePFCursus\CSharpCorePFCursus.csproj", "{FBA6A1E5-83DB-46F2-BD01-CD5644BBAFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpCorePFOefenmap", "CSharpCorePFOefenmap\CSharpCorePFOefenmap.csproj", "{A7115016-CD2F-43BB-8A2A-4F78E0236942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpCorePFOefenmap", "CSharpCorePFOefenmap\CSharpCorePFOefenmap.csproj", "{A7115016-CD2F-43BB-8A2A-4F78E0236942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oefening1BoekBoekenrek", "Oefening1BoekBoekenrek\Oefening1BoekBoekenrek.csproj", "{521EF05C-E34F-4C25-961C-FDB2E47B4DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A7115016-CD2F-43BB-8A2A-4F78E0236942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7115016-CD2F-43BB-8A2A-4F78E0236942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7115016-CD2F-43BB-8A2A-4F78E0236942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521EF05C-E34F-4C25-961C-FDB2E47B4DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521EF05C-E34F-4C25-961C-FDB2E47B4DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521EF05C-E34F-4C25-961C-FDB2E47B4DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521EF05C-E34F-4C25-961C-FDB2E47B4DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

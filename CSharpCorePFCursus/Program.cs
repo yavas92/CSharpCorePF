@@ -14,6 +14,7 @@ namespace CSharpCorePFCursus
         {
             PersoneelStatus statusChef = PersoneelStatus.HogerKader;
             WriteLine(statusChef);
+            // p234
         }
 
         public static (int aantalVerlofdagen, int aantalZiektedagen) Afwezigheden(Werknemer werknemer)
