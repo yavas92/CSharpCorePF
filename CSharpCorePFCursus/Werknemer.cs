@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpCorePFCursus
+namespace Firma.Personeel
 {
     public abstract partial class Werknemer : IKost
     {
@@ -83,6 +83,9 @@ namespace CSharpCorePFCursus
                 PersoneelsFeest = PersoneelsFeest.AddDays(1);
             }
         }
+
+        public DateTime[] Verlofdagen { get; set; }
+        public DateTime[] Ziektedagen { get; set; }
 
         // Methods
         public bool VerjaarAncien
