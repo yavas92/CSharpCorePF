@@ -536,6 +536,34 @@ namespace CSharpCorePFOefenmap
             //    Console.WriteLine(mGegeven.GeefMilieuData());
             //    Console.WriteLine();
             //}
+
+
+
+            // 11 Delegates en events
+            //------------------------
+
+            // 11.1 Oefening Bank
+
+            //Zichtrekening zRekening = new Zichtrekening(new Klant("Abdullah", "Yavas"), "BE23377019153291", 200, DateTime.Now, -1000);
+            //Spaarrekening sRekening = new Spaarrekening(new Klant("Abdullah", "Yavas"), "BE23377019153291", 2000, DateTime.Now);
+            //BankBediende eenBankBediende = new BankBediende("Burcu", "Kose");
+
+            //zRekening.RekeningUittreksel += eenBankBediende.DrukRekeninguittrekselAf;
+            //sRekening.RekeningUittreksel += eenBankBediende.DrukRekeninguittrekselAf;
+            //zRekening.SaldoInHetRood += eenBankBediende.SaldoInHetRood;
+            //sRekening.SaldoInHetRood += eenBankBediende.SaldoInHetRood;
+
+            //zRekening.Storten(50);
+            //Console.WriteLine();
+            //zRekening.Afhalen(300);
+            //Console.WriteLine();
+
+            //sRekening.Storten(500);
+            //Console.WriteLine();
+            //sRekening.Afhalen(1000);
+            //Console.WriteLine();
+
+
         }
     }
 }

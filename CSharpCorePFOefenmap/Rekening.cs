@@ -4,6 +4,7 @@ using System.Text;
 
 namespace CSharpCorePFOefenmap
 {
+    public delegate void Transactie(Rekening rekening);
     public abstract class Rekening : ISpaarmiddel
     {
         // Constructor
@@ -19,6 +20,7 @@ namespace CSharpCorePFOefenmap
         private string rekeningNummerValue;
         private DateTime creatieDatum;
         private decimal saldoValue;
+        public Klant Eigenaar { get; set; }
 
         public decimal Saldo
         {
@@ -52,13 +54,9 @@ namespace CSharpCorePFOefenmap
             }
         }
 
-        private Klant eigenaarValue;
+        public decimal VorigSaldo { get; private set; }
 
-        public Klant Eigenaar
-        {
-            get { return eigenaarValue; }
-            set { eigenaarValue = value; }
-        }
+
 
 
         // Methods
@@ -82,15 +80,39 @@ namespace CSharpCorePFOefenmap
                 Console.Write("Eigenaar: ");
                 Eigenaar.Afbeelden();
             }
-                
-            Console.WriteLine($"Rekeningnummer: {this.Rekeningnummer}");
-            Console.WriteLine($"Creatiedatum: {this.CreatieDatum.ToShortDateString()}");
-            Console.WriteLine($"Saldo: {this.Saldo}");
+
+            Console.WriteLine($"Rekeningnummer: {Rekeningnummer}");
+            Console.WriteLine($"Creatiedatum: {CreatieDatum.ToShortDateString()}");
+            Console.WriteLine($"Saldo: {Saldo}");
         }
 
         public void Storten(decimal stortBedrag)
         {
-            this.Saldo += stortBedrag;
+            VorigSaldo = Saldo;
+            Saldo += stortBedrag;
+            if (RekeningUittreksel != null)
+                RekeningUittreksel(this);
         }
+
+        public void Afhalen(decimal afhaalBedrag)
+        {
+            if (Saldo >= afhaalBedrag)
+            {
+                VorigSaldo = Saldo;
+                Saldo -= afhaalBedrag;
+                if (RekeningUittreksel != null)
+                    RekeningUittreksel(this);
+            }
+            else
+            {
+                if (SaldoInHetRood != null)
+                    SaldoInHetRood(this);
+            }
+
+        }
+
+        // Events
+        public event Transactie RekeningUittreksel;
+        public event Transactie SaldoInHetRood;
     }
 }
