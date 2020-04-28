@@ -6,6 +6,27 @@ namespace Firma.Personeel
 {
     public abstract partial class Werknemer : IKost
     {
+        // Constructors
+        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
+        {
+
+        }
+        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
+        {
+            Naam = naam;
+            InDienst = inDienst;
+            Geslacht = geslacht;
+        }
+
+        static Werknemer() // Static constructor, C# voert deze uit voor je de class gebruikt
+        {
+            PersoneelsFeest = new DateTime(DateTime.Today.Year, 2, 1);
+            while (PersoneelsFeest.DayOfWeek != DayOfWeek.Friday)
+            {
+                PersoneelsFeest = PersoneelsFeest.AddDays(1);
+            }
+        }
+
         // Properties
         private string naamValue;
         public string Naam
@@ -62,32 +83,10 @@ namespace Firma.Personeel
 
         public WerkRegime Regime { get; set; }
 
-
-        // Constructors
-        public Werknemer() : this("Onbekend", DateTime.Today, Geslacht.Man)
-        {
-
-        }
-        public Werknemer(string naam, DateTime inDienst, Geslacht geslacht)
-        {
-            Naam = naam;
-            InDienst = inDienst;
-            Geslacht = geslacht;
-        }
-
-        static Werknemer()
-        {
-            PersoneelsFeest = new DateTime(DateTime.Today.Year, 2, 1);
-            while (PersoneelsFeest.DayOfWeek != DayOfWeek.Friday)
-            {
-                PersoneelsFeest = PersoneelsFeest.AddDays(1);
-            }
-        }
-
         public DateTime[] Verlofdagen { get; set; }
         public DateTime[] Ziektedagen { get; set; }
 
-        // Methods
+        // Overriden properties
         public bool VerjaarAncien
         {
             get
@@ -109,6 +108,8 @@ namespace Firma.Personeel
             }
         }
 
+        // Methods
+
         public virtual void Afbeelden()
         {
             Console.WriteLine($"Naam: {Naam}");
@@ -122,6 +123,27 @@ namespace Firma.Personeel
         public override string ToString()
         {
             return $"{Naam} {Geslacht}";
+        }
+
+        public static void UitgebreideWerknemersLijst(Werknemer[] werknemers)
+        {
+            Console.WriteLine("Uitgebreide werknemerslijst: ");
+            foreach (Werknemer werknemer in werknemers)
+            {
+                werknemer.Afbeelden();
+                Console.WriteLine();
+            }
+        }
+
+        public static void KorteWerknemersLijst(Werknemer[] werknemers)
+        {
+            Console.WriteLine("Verkorte werknemerslijst:");
+            foreach (Werknemer werknemer in werknemers)
+            {
+                Console.WriteLine(werknemer.ToString());
+                Console.WriteLine();
+            }
+                
         }
     }
 }

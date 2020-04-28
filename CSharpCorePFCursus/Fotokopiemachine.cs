@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Firma.Materiaal
 {
+    public delegate void Onderhoudsbeurt(Fotokopiemachine machine);
     public class Fotokopiemachine : IKost
     {
         // Constructor
@@ -57,9 +58,23 @@ namespace Firma.Materiaal
             }
         }
 
-
+        private const int AantalBlzTussen2OnderhoudsBeurten = 10;
 
         // Methods
+        public void FotoKopieer(int aantalBlz)
+        {
+            for(int blz=1; blz<=aantalBlz; blz++)
+            {
+                Console.WriteLine($"Fotokopiemachine {SerieNr} kopieert blz. {blz} van {aantalBlz}");
+                if (++AantalGekopieerdeBlz % AantalBlzTussen2OnderhoudsBeurten == 0)
+                    if (OnderhoudNodig != null)
+                        OnderhoudNodig(this);
+            }
+        }
+        
+        // Events
+        public event Onderhoudsbeurt OnderhoudNodig;
+
 
     }
 }

@@ -6,6 +6,13 @@ namespace Firma.Personeel
 {
     public sealed class Manager : Bediende
     {
+        // Constructor
+        public Manager(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde, decimal bonus)
+            : base(naam, inDienst, geslacht, wedde)
+        {
+            Bonus = bonus;
+        }
+
         // Properties
         private decimal bonusValue;
 
@@ -33,13 +40,6 @@ namespace Firma.Personeel
             {
                 return base.Bedrag + Bonus;
             }
-        }
-
-        // Constructor
-        public Manager(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde, decimal bonus)
-            : base(naam, inDienst, geslacht, wedde)
-        {
-            Bonus = bonus;
         }
 
         // Methods
@@ -70,5 +70,13 @@ namespace Firma.Personeel
         {
             return Naam.GetHashCode();
         }
+
+        public void OnderhoudNoteren(Firma.Materiaal.Fotokopiemachine machine)
+        {
+            Console.WriteLine($"{Naam} registreert het onderhoud van machine {machine.SerieNr} in het logboek.");
+        }
+
+
     }
 }
+                      

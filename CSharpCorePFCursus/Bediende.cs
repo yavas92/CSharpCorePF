@@ -6,6 +6,13 @@ namespace Firma.Personeel
 {
     public class Bediende : Werknemer
     {
+        // Constructors
+        public Bediende(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde)
+            : base(naam, inDienst, geslacht)
+        {
+            Wedde = wedde;
+        }
+
         // Properties
         private decimal weddeValue;
 
@@ -35,13 +42,6 @@ namespace Firma.Personeel
             }
         }
 
-        // Constructors
-        public Bediende(string naam, DateTime inDienst, Geslacht geslacht, decimal wedde)
-            : base(naam, inDienst, geslacht)
-        {
-            Wedde = wedde;
-        }
-
         // Methods
         public override void Afbeelden()
         {
@@ -51,6 +51,11 @@ namespace Firma.Personeel
         public override string ToString()
         {
             return $"{base.ToString()} {Wedde} euro/maand";
+        }
+
+        public void DoeOnderhoud(Firma.Materiaal.Fotokopiemachine machine)
+        {
+            Console.WriteLine($"{Naam} onderhoudt machine {machine.SerieNr}");
         }
     }
 }
