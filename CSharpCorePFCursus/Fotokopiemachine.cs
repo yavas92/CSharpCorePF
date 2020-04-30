@@ -5,7 +5,7 @@ using System.Text;
 namespace Firma.Materiaal
 {
     public delegate void Onderhoudsbeurt(Fotokopiemachine machine);
-    public class Fotokopiemachine : IKost
+    public partial class Fotokopiemachine : IKost
     {
         // Constructor
         public Fotokopiemachine(string serieNr, int aantalGekopieerdeBlz, decimal kostPerBlz)
@@ -25,8 +25,9 @@ namespace Firma.Materiaal
             get { return aantalGekopieerdeBlzValue; }
             set
             {
-                if (value >= 0)
-                    aantalGekopieerdeBlzValue = value;
+                if (value < 0)
+                    throw new AantalGekopieerdeBlzException("Aantal gekopieerde blz. < 0!", value);
+                aantalGekopieerdeBlzValue = value;
             }
         }
 
@@ -37,7 +38,8 @@ namespace Firma.Materiaal
             get { return kostPerBlzValue; }
             set
             {
-                if (value >= 0m)
+                if (value <= 0m)
+                    throw new KostPerBlzException("Kost per blz. <= 0!", value);
                     kostPerBlzValue = value;
             }
         }
@@ -63,7 +65,7 @@ namespace Firma.Materiaal
         // Methods
         public void FotoKopieer(int aantalBlz)
         {
-            for(int blz=1; blz<=aantalBlz; blz++)
+            for (int blz = 1; blz <= aantalBlz; blz++)
             {
                 Console.WriteLine($"Fotokopiemachine {SerieNr} kopieert blz. {blz} van {aantalBlz}");
                 if (++AantalGekopieerdeBlz % AantalBlzTussen2OnderhoudsBeurten == 0)
@@ -71,7 +73,7 @@ namespace Firma.Materiaal
                         OnderhoudNodig(this);
             }
         }
-        
+
         // Events
         public event Onderhoudsbeurt OnderhoudNodig;
 
