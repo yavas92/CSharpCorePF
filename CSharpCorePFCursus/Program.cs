@@ -10,19 +10,10 @@ namespace CSharpCorePFCursus
         delegate void WerknemersLijst(Werknemer[] werknemers);
         static void Main(string[] args)
         {
-            Console.WriteLine("Provincie: ");
-            string provincie = Console.ReadLine();
-            try
-            {
-                ProvincieInfo info = new ProvincieInfo();
-                Console.WriteLine(info.ProvincieGrootte(provincie));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
-            // p266
+            Arbeider asterix = new Arbeider("Asterix", DateTime.Today, Geslacht.Man, 10m, 1); 
+            string afdelingsnaam;
+            afdelingsnaam = asterix.Afdeling?.Naam??"onbekend";
+            Console.WriteLine($"{asterix.Naam} werkt op de afdeling {afdelingsnaam}.");
         }
     }
 }

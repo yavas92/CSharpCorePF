@@ -60,26 +60,14 @@ namespace Firma.Personeel
             }
         }
 
-        private static DateTime personeelsFeestValue;
-
-        public static DateTime PersoneelsFeest
-        {
-            get { return personeelsFeestValue; }
-            set { personeelsFeestValue = value; }
-        }
+        public static DateTime PersoneelsFeest { get; set; }
 
         public abstract decimal Premie
         {
             get;
         }
 
-        private Afdeling afdelingValue;
-
-        public Afdeling Afdeling
-        {
-            get { return afdelingValue; }
-            set { afdelingValue = value; }
-        }
+        public Afdeling Afdeling { get; set; }
 
         public WerkRegime Regime { get; set; }
 
