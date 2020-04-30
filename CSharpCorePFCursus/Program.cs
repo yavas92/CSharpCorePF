@@ -21,6 +21,8 @@ namespace CSharpCorePFCursus
             {
                 Console.WriteLine(ex.Message);
             }
+
+            // p266
         }
     }
 }

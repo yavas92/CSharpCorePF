@@ -40,7 +40,7 @@ namespace Firma.Materiaal
             {
                 if (value <= 0m)
                     throw new KostPerBlzException("Kost per blz. <= 0!", value);
-                    kostPerBlzValue = value;
+                kostPerBlzValue = value;
             }
         }
 

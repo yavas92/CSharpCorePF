@@ -564,6 +564,32 @@ namespace CSharpCorePFOefenmap
             //Console.WriteLine();
 
 
+
+            // 12 Exceptions
+            //---------------
+
+            // 12.1 Oefening Bank
+
+            //try
+            //{
+            //    Klant ik = new Klant("Abdullah", "Yavas");
+            //    ISpaarmiddel[] spaarmiddelen = new ISpaarmiddel[3];
+
+            //    spaarmiddelen[0] = new Zichtrekening(ik, "BE23377019153291", 2000m, DateTime.Now, -1000);
+            //    spaarmiddelen[1] = new Spaarrekening(ik, "BE23377019153291", 5000m, DateTime.Now);
+            //    spaarmiddelen[2] = new Kasbon(DateTime.Now, 399.99m, 2, 2, ik);
+
+            //    foreach (ISpaarmiddel spaarmiddel in spaarmiddelen)
+            //    {
+            //        spaarmiddel.Afbeelden();
+            //        Console.WriteLine();
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
         }
     }
 }

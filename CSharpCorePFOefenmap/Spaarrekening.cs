@@ -14,15 +14,16 @@ namespace CSharpCorePFOefenmap
             get { return intrestValue; }
             set
             {
-                if (value >= 0f)
-                    intrestValue = value;
+                if (value < 0f)
+                    throw new Exception("Intrest moet positief zijn!");
+                intrestValue = value;
             }
         }
 
         // Constructor
         public Spaarrekening(Klant eigenaar, string rekeningNummer, decimal saldo, DateTime creatieDatum) : base(eigenaar, rekeningNummer, saldo, creatieDatum)
         {
-            
+
         }
 
         // Methods

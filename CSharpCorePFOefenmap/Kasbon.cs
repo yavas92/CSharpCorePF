@@ -27,8 +27,9 @@ namespace CSharpCorePFOefenmap
             get { return aankoopDatumValue; }
             set
             {
-                if (value.Year >= 1900)
-                    aankoopDatumValue = value;
+                if (value < new DateTime(1900, 1, 1))
+                    throw new Exception($"De aankoopdatum mag niet voor {new DateTime(1900, 1, 1).ToShortDateString()} zijn!");
+                aankoopDatumValue = value;
             }
         }
 
@@ -37,8 +38,9 @@ namespace CSharpCorePFOefenmap
             get { return bedragValue; }
             set
             {
-                if (value > 0)
-                    bedragValue = value;
+                if (value < 0)
+                    throw new Exception("Het bedrag moet positief zijn!");
+                bedragValue = value;
             }
         }
 
@@ -47,8 +49,9 @@ namespace CSharpCorePFOefenmap
             get { return looptijdValue; }
             set
             {
-                if (value > 0)
-                    looptijdValue = value;
+                if (value < 0)
+                    throw new Exception("De looptijd moet positief zijn!");
+                looptijdValue = value;
             }
         }
 
@@ -57,8 +60,9 @@ namespace CSharpCorePFOefenmap
             get { return intrestValue; }
             set
             {
-                if (value > 0)
-                    intrestValue = value;
+                if (value < 0)
+                    throw new Exception("Intrest moet positief zijn!");
+                intrestValue = value;
             }
         }
 

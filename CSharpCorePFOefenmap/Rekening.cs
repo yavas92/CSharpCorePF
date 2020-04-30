@@ -37,10 +37,10 @@ namespace CSharpCorePFOefenmap
             get { return rekeningNummerValue; }
             set
             {
-                if (RekeningnummerCorrect(value))
-                    rekeningNummerValue = value;
-                else
-                    Console.WriteLine("Ongeldige rekeningnummer");
+                if (!RekeningnummerCorrect(value))
+                    throw new Exception("Ongeldige rekeningnummer!");
+                rekeningNummerValue = value;
+
             }
         }
 
@@ -49,8 +49,9 @@ namespace CSharpCorePFOefenmap
             get { return creatieDatum; }
             set
             {
-                if (value > new DateTime(1900, 1, 1))
-                    creatieDatum = value;
+                if (value < new DateTime(1900, 1, 1))
+                    throw new Exception($"De creatiedatum mag niet voor {new DateTime(1900, 1, 1).ToShortDateString()} zijn!");
+                creatieDatum = value;
             }
         }
 

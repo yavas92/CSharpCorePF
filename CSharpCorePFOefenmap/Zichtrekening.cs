@@ -7,7 +7,7 @@ namespace CSharpCorePFOefenmap
     class Zichtrekening : Rekening
     {
         // Constructor
-        public Zichtrekening(Klant eigenaar, string rekeningNummer,decimal saldo, DateTime creatieDatum, decimal maxKrediet) : base(eigenaar, rekeningNummer, saldo, creatieDatum)
+        public Zichtrekening(Klant eigenaar, string rekeningNummer, decimal saldo, DateTime creatieDatum, decimal maxKrediet) : base(eigenaar, rekeningNummer, saldo, creatieDatum)
         {
             MaxKrediet = maxKrediet;
         }
@@ -19,8 +19,9 @@ namespace CSharpCorePFOefenmap
             get { return maxKredietValue; }
             set
             {
-                if (value <= 0m)
-                    maxKredietValue = value;
+                if (value > 0m)
+                    throw new Exception("De waarde van MaxKrediet mag niet positief zijn!");
+                maxKredietValue = value;
             }
         }
 
