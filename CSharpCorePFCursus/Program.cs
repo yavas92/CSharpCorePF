@@ -2,6 +2,8 @@
 using Firma;
 using Firma.Personeel;
 using Firma.Materiaal;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CSharpCorePFCursus
 {
@@ -10,12 +12,12 @@ namespace CSharpCorePFCursus
         delegate void WerknemersLijst(Werknemer[] werknemers);
         static void Main(string[] args)
         {
-            Overuren mijnOveruren = new Overuren();
-            mijnOveruren[0] = 4;
-            mijnOveruren["apr"] = 2;
-            Console.WriteLine("Overuren januari: " + mijnOveruren["jan"]);
-            Console.WriteLine("Overuren april: " + mijnOveruren[3]);
-            Console.WriteLine("Totaal overuren: " + mijnOveruren.Totaal);
+            var persoon = new { Nr = 1, Naam = "Adam", AantalKinderen = 2 };
+            var persoon2 = new { Nr = 1, Naam = "Adam", AantalKinderen = 2 };
+            Console.WriteLine(persoon.GetType().ToString());
+            Console.WriteLine(persoon.GetHashCode());
+            Console.WriteLine(persoon2.GetType().ToString());
+            Console.WriteLine(persoon2.GetHashCode());
         }
     }
 }
