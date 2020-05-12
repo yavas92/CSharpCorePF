@@ -1,11 +1,14 @@
 ﻿using CSharpCorePFOefenmap;
 using System;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace CSharpCorePFOefenmap
 {
     class Program
     {
+        //delegate ConsoleColor KleurGetal(int getal); // Expression lambda
+        delegate void KleurGetal(int getal); // Statement lambda
         static void Main(string[] args)
         {
 
@@ -590,6 +593,108 @@ namespace CSharpCorePFOefenmap
             //    Console.WriteLine(ex.Message);
             //}
 
+
+
+            // 13 Lambda expressies
+
+
+            // Met expression lambda
+            // --------------------------
+            //KleurGetal kleurEvenOneven = getal => getal % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Red;
+            //KleurGetal kleurPositiefNegatief = getal => getal >= 0 ? ConsoleColor.White : ConsoleColor.Yellow;
+            //ToonGetallen(kleurEvenOneven);
+            //ToonGetallen(kleurPositiefNegatief);
+
+            //void ToonGetallen(KleurGetal kleurGetal)
+            //{
+            //    var getallen = new[] { 0, -1, 2, -3, 4, -5, 6, -7, 8, -9 };
+            //    foreach (var getal in getallen)
+            //    {
+            //        Console.ForegroundColor = kleurGetal(getal);
+            //        Console.WriteLine(getal);
+            //    }
+            //    Console.WriteLine();
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //}
+
+
+            // Met statement lambda
+            // --------------------------
+
+            //KleurGetal kleurEvenOneven = getal =>
+            //{
+            //    Console.ForegroundColor = getal % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Red;
+            //    Console.WriteLine(getal);
+            //};
+
+            //KleurGetal kleurPositiefNegatief = getal =>
+            //{
+            //    Console.ForegroundColor = getal >= 0 ? ConsoleColor.White : ConsoleColor.Yellow;
+            //    Console.WriteLine(getal);
+            //};
+
+            //ToonGetallen(kleurEvenOneven);
+            //ToonGetallen(kleurPositiefNegatief);
+
+            //void ToonGetallen(KleurGetal kleurGetal)
+            //{
+            //    var getallen = new[] { 0, -1, 2, -3, 4, -5, 6, -7, 8, -9 };
+            //    foreach (var getal in getallen)
+            //        kleurGetal(getal);
+            //    Console.WriteLine();
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //}
+
+
+            // Met Func<>
+            // --------------------------
+
+            //Func<int, ConsoleColor> kleurEvenOneven = getal => getal % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Red;
+            //Func<int, ConsoleColor> kleurPositiefNegatief = getal => getal >= 0 ? ConsoleColor.White : ConsoleColor.Yellow;
+
+            //ToonGetallen(kleurEvenOneven);
+            //ToonGetallen(kleurPositiefNegatief);
+
+            //void ToonGetallen(Func<int, ConsoleColor> kleurGetal)
+            //{
+            //    var getallen = new[] { 0, -1, 2, -3, 4, -5, 6, -7, 8, -9 };
+            //    foreach (var getal in getallen)
+            //    {
+            //        Console.ForegroundColor = kleurGetal(getal);
+            //        Console.WriteLine(getal);
+            //    }
+
+            //    Console.WriteLine();
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //}
+
+
+            // Met Action<>
+            // --------------------------
+
+            //Action<int> kleurEvenOneven = getal =>
+            //{
+            //    Console.ForegroundColor = getal % 2 == 0 ? ConsoleColor.Green : ConsoleColor.Red;
+            //    Console.WriteLine(getal);
+            //};
+
+            //Action<int> kleurPositiefNegatief = getal =>
+            //{
+            //    Console.ForegroundColor = getal >= 0 ? ConsoleColor.White : ConsoleColor.Yellow;
+            //    Console.WriteLine(getal);
+            //};
+            //ToonGetallen(kleurEvenOneven);
+            //ToonGetallen(kleurPositiefNegatief);
+
+            //void ToonGetallen(Action<int> kleurGetal)
+            //{
+            //    var getallen = new[] { 0, -1, 2, -3, 4, -5, 6, -7, 8, -9 };
+            //    foreach (var getal in getallen)
+            //        kleurGetal(getal);
+
+            //    Console.WriteLine();
+            //    Console.ForegroundColor = ConsoleColor.White;
+            //}
         }
     }
 }
