@@ -27,17 +27,13 @@ namespace Firma.Personeel
             {
                 get
                 {
-                    switch (Type)
+                    return Type switch
                     {
-                        case RegimeType.Voltijds:
-                            return 25;
-                        case RegimeType.Viervijfde:
-                            return 20;
-                        case RegimeType.Halftijds:
-                            return 12;
-                        default:
-                            return 0;
-                    }
+                        RegimeType.Voltijds => 25,
+                        RegimeType.Viervijfde => 20,
+                        RegimeType.Halftijds => 12,
+                        _ => 0,
+                    };
                 }
             }
 
